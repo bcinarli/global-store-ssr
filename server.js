@@ -5,7 +5,7 @@ import { renderToString } from 'react-dom/server'
 import { Provider } from 'react-redux'
 import { store } from './src/store'
 import { defaultState } from './src/defaults';
-import App from './src/App'
+import App from './src/app'
 
 const app = Express();
 let port = 3000;
