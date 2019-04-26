@@ -7,8 +7,12 @@ import { store } from './src/store'
 import { defaultState } from './src/defaults';
 import App from './src/App'
 
-const app = Express()
-const port = 3000
+const app = Express();
+let port = 3000;
+
+if (typeof process.env.PORT !== 'undefined') {
+  port = process.env.PORT;
+}
 
 //Serve static files
 app.use('/static', Express.static('dist'))
