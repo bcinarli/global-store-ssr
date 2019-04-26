@@ -5,7 +5,6 @@
   "main": "lib/index.js",
   "scripts": {
     "clean": "rm -rf dist && rm -rf lib",
-    "prestart": "npm run build",
     "start": "node lib/index.js",
     "babel": "npm run babel:src && npm run babel:server",
     "babel:server": "babel server.js --out-file ./lib/index.js",
