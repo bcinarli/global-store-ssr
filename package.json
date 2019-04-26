@@ -5,11 +5,14 @@
   "main": "lib/index.js",
   "scripts": {
     "clean": "rm -rf dist && rm -rf lib",
-    "start": "npm run clean && npm run build && npm run babel && node lib/index.js",
+    "prestart": "npm run build",
+    "start": "node lib/index.js",
     "babel": "npm run babel:src && npm run babel:server",
     "babel:server": "babel server.js --out-file ./lib/index.js",
     "babel:src": "babel src -d ./lib/src",
-    "build": "webpack --mode production",
+    "build": "npm run clean && npm run build:app && npm run build:server",
+    "build:server": "npm run babel",
+    "build:app": "webpack --mode production",
     "dev": "webpack-dev-server --open --mode development"
   },
   "author": "",
